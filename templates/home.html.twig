@@ -1,0 +1,60 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+{% block HomeTeam %}
+<article class="homeTeam">
+<h2>LA TEAM A LA UNE </h2>
+    {% for team in teams %}
+    {% if loop.first %}
+    <section class="team">
+        <img src="{{ team.getLogo().getUrl() }}" alt="{{ team.getLogo().getUrl() }}">
+        <section>
+            <h2>{{ team.getName() }}</h2>
+            <h3>Les players</h3>
+            {% for player in players %}
+                {% if player.getTeam().getId() == team.getId() %}
+                    <section class="player_cards">
+                        <img src="{{ player.getPortrait().getUrl() }}" alt="{{ player.getPortrait().getUrl() }}">
+                        <p>{{ player.getNickName() }}</p>
+                    </section>
+                {% endif %}
+            {% endfor %}
+        </section>
+        </section>
+        {% endif %}
+    {% endfor %}
+    </article>
+{% endblock %}
+
+{% block HomePlayers %}
+   {% set playerCount = 0 %}
+   <article>
+   <h2>LES PLAYERS A LA UNE </h2>
+    <section>
+      {% for player in players %}
+         {% if playerCount < 3 %}
+         <section class="player_card">
+                        <img src="{{ player.getPortrait().getUrl() }}" alt="{{ player.getPortrait().getUrl() }}">
+                        <p>{{ player.getNickName() }}</p>
+                        <p>{{ player.getTeam().getName()}}</p>
+                    </section>
+                    {% set playerCount = playerCount + 1 %}
+            {% endif %}
+               </section>
+             </article>
+         {% endfor %}
+   {% endblock %}
+
+      {% block HomeMatch %}
+         <article>
+         <h2>LE DERNIER MATCH</h2>
+         <section>
+         <h3>{{lastGame.getName()}}</h3>
+         <p>{{lastGame.getDate()}}</p>
+         <div>
+         <img src="{{lastGame.getTeam_1().getLogo().getUrl()}}" alt="{{lastGame.getTeam_1().getLogo().getAlt()}}">
+         </div>
+         <div>
+         <img src="{{lastGame.getTeam_2().getLogo().getUrl()}}" alt="{{lastGame.getTeam_2().getLogo().getAlt()}}">
+         </div>
+        {% endblock %}
+        {% endblock %}

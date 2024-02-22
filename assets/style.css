@@ -1,0 +1,74 @@
+:root {
+  --darkerGrey: #0b132b;
+  --darkGrey: #1c2541;
+  --yellow: #d4b52f;
+  --green: #509d77;
+  --pink: #d97ab5;
+  --blue: #45a0ec;
+  --purple: #9e87cb;
+  --red: #d66f75;
+  --grey: #83a1bb;
+  --white: #ffffff;
+}
+
+body {
+  font-family: Ubuntu;
+  background-color: var(--darkerGrey);
+}
+
+header {
+  color: white;
+  text-align: center;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+.banner {
+  background-image: url(img/home_background.png);
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
+.banner h2 {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+}
+.banner h3 {
+  font-weight: 500;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.hometeam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeTeam h2 {
+  color: var(--yellow);
+  text-decoration: underline;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.team {
+  display: flex;
+  border: 1px solid var(--darkGrey);
+  width: 90%;
+}
+
+.team img {
+  max-width: 20%;
+}

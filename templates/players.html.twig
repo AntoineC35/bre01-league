@@ -1,0 +1,11 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+{% block players %}
+{% for player in players %}
+                    <section class="player_cards">
+                        <img src="{{ player.getPortrait().getUrl() }}" alt="{{ player.getPortrait().getUrl() }}">
+                        <p>{{ player.getNickName() }}</p>
+                    </section>
+            {% endfor %}
+{% endblock %}
+{% endblock %}

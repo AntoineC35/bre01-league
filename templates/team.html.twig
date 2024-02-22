@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+        <section>
+            <h2>{{ team.getName() }}</h2>
+             {% for player in players %}
+                {% if player.getTeam().getId() == team.getId() %}
+                    <section class="player_cards">
+                        <img src="{{ player.getPortrait().getUrl() }}" alt="{{ player.getPortrait().getUrl() }}">
+                        <p>{{ player.getNickName() }}</p>
+                        <a href="index.php?route=player&id={{ player.getId() }}">Découvrez {{ player.getNickName() }}</a>
+                    </section>
+                {% endif %}
+            {% endfor %}
+{% endblock %}

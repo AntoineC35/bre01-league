@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title> {% block title %}{% endblock %} | The League</title>
+        {% block style %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/style.css">
+        {% endblock %}
+    </head>
+    <body>
+        {% block header %}
+        <header>
+            <h1><a href="index.php?">THE LEAGUE</a></h1>
+            <nav> 
+                <ul>
+                <li><a href="index.php?route=teams">LES TEAMS</a></li>
+                <li><a href="index.php?route=players">LES PLAYERS</a></li>
+                <li><a href="#">LES MATCHS</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% endblock %}
+        {% block banner %}
+        <section class="banner"> 
+        <h2>TOUT SUR LA LEAGUE</h2>
+        <h3>Les players, les teams et l'actu des matchs</h3>
+        </section class="banner"> 
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+        {% block script %}
+        {% endblock %}
+    </body>
+</html>
